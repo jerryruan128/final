@@ -14,7 +14,8 @@ export default withAuthenticator(class App extends Component {
     this.state = {
       title: 'test',
       message: 'test',
-      postsArray:[]
+      titleArray:[["How to use horizontal partitioning?","deal with problems when we try to use horizontal partitioning"],
+      ["How to use vertical partitioning","deal with problems when we try to use vertical partitioning"]]
     };
 
   }
@@ -38,6 +39,7 @@ export default withAuthenticator(class App extends Component {
       title: this.state.title,
       message: this.state.message
     }
+    this.state.titleArray.push([this.state.title,this.state.message])
     axios
     .post('http://18.207.140.249/post/create', data)
     .then(res=> console.log(res))
@@ -81,14 +83,17 @@ export default withAuthenticator(class App extends Component {
         <div className="Posts-List"> 
           <h2>Active Sessions</h2>
           {
-            this.state.postsArray.map((post, index)=> {
-              return(
-                
-                <Post _id= {post._id} title= {post.title} message = {post.message} >
-
-                </Post>
-              )
-            })
+            <ul>
+            {
+                this.state.titleArray.map((item,index)=>{
+                return <li>
+                  <p>{item[0]}</p>
+                  <p>{item[1]}</p>
+                   <hr />
+                </li>
+                })
+            }
+        </ul> 
           }
         </div>
       </div>
