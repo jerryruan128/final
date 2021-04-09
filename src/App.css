@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  max-height: 7vh;
+  display: flex;
+  font-size: calc(2vmin);
+  color: white;
+  align-items: flex-end;
+  text-align: flex-end;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Align-right {
+  position: absolute;
+  justify-content: right;
+  right:30px;
+  display: flex;
+}
+
+form {
+  text-align: center;
+}
+textarea {
+  width: 800px;
+  resize: none;
+  height: 100px;
+}
+
+input {
+  width: 800px;
+}
+
+.button {
+  background-color:white;
+  color: cornflowerblue;
+  text-align: center;
+  display:inline-block;
+  font-size: 15px;
+  padding: 15px 32px;
+  border: none;
+  text-decoration: none;
+  border: cornflowerblue
+}
+.button:hover {
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+
+}
+
+.Post-Header {
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.MakePost {
+  align-items: center;
+  padding-top: 20px
+}
+
+.Posts-List {
+  align-items: center;
+  text-align: left;
+  padding-left:25%;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

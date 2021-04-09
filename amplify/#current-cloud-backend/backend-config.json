@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "cmpt474proja3eac10e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
