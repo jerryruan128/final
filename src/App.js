@@ -3,8 +3,7 @@ import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import {AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import React, {Component} from "react";
-import Post from './components/Post'
-import axios from 'axios'
+
 
 Amplify.configure(awsconfig)
 
@@ -20,18 +19,7 @@ export default withAuthenticator(class App extends Component {
 
   }
 
-  componentDidMount() { 
-    axios
-      .get('http://18.207.140.249/post/allpost')
-      .then(response => {
-        this.setState({postsArray: response.data})
-      })
-      .catch(error => {
-        console.log(error)
-        console.log('get error')
-      })
 
-  }
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -40,12 +28,7 @@ export default withAuthenticator(class App extends Component {
       message: this.state.message
     }
     this.state.titleArray.push([this.state.title,this.state.message])
-    axios
-    .post('http://18.207.140.249/post/create', data)
-    .then(res=> console.log(res))
-    .catch(err => console.log(err))
-
-    this.componentDidMount()
+    this.forceUpdate()
   }
 
   handleInputChange = (event) => {
